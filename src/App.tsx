@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { GameDisplayer } from './components/GameDisplayer';
+
 
 function App() {
 
@@ -14,9 +16,9 @@ function App() {
   }
 
   return (
-    <div>
-
-    </div>
+    <>
+      <GameDisplayer/>
+    </>
   );
 }
 
