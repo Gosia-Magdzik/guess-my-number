@@ -12,7 +12,6 @@ function App() {
   const randomNumberGenerator = () => {
     let num1 = Math.floor(Math.random() * 20 ) + 1;  //let becouse it is going to change
     setRandomNum(num1)
-    console.log(num1)
   }
 
   return (
