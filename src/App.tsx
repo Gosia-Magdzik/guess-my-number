@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { GameDisplayer } from './components/GameDisplayer';
-
+import { GlobalStyle } from './GlobalStyle';
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyle/>
       <GameDisplayer/>
     </>
   );
