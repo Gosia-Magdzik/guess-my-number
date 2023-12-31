@@ -9,6 +9,8 @@ import { Wrapper,
         Input,
         ButtonArea,
         Button,
+        H1,
+        Paragraph,
 } from './styled'
 
 export const GameDisplayer = () => {
@@ -17,16 +19,16 @@ export const GameDisplayer = () => {
         <Container>
             <TopSection>
                 <Line></Line>
-                <h1></h1>
+                <H1></H1>
                 <Line></Line>
             </TopSection>
             <Title>
-                <h1>Guess my number</h1>
+                <H1>Guess my number</H1>
             </Title>
             <MiddleSection>
-                <p>Score: <span>20</span></p>
-                <p>Hight Score: <span>20</span></p>
-                <p>Start Guessing</p>
+                <Paragraph>Score: <span>20</span></Paragraph>
+                <Paragraph>Hight Score: <span>20</span></Paragraph>
+                <Paragraph>Start Guessing</Paragraph>
             </MiddleSection>
             <InputArea>
                 <Input type="number"/>

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
     color: #f4efef;
-    background: #374753;
+    background: #37475350;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,6 @@ export const Container = styled.div`
     transform: translate(-50%, -50%);
     height: 90vh;
     padding: 2rem;
-    filter: drop-shadow(10px 10px 4px #505052);
 
 `
 
@@ -30,30 +29,103 @@ export const TopSection = styled.div`
 `
 
 export const Line = styled.div`
-    
+    height: 10px;
+    border: 1px solid white;
+    width: 50%;
+    background-color: #bbd6d6;
+`
+
+export const H1 = styled.h1`
+    background-color: #bbd6d6;
+    padding: 6px 20px;
+    color: black;
+    font-size: 3rem;
+    border-radius: 40px;
+
 `
 
 export const Title = styled.div`
-    
+    font-size: 3rem;
+    font-family: "Nosifer", sans-serif;
+    padding: 0 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out; 
 `
 
 export const MiddleSection = styled.div`
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+`
+
+export const Paragraph = styled.p`
+    font-size: 3rem;
+    font-family: "VT323", monospace;
+    transition: all 0.3s ease-in-out;
+
+    &:nth-child(3) {
+        margin-top: 20px;
+        font-size: 4rem;
+        font-family: "Fjalla One", sans-serif;
+    }
 `
 
 export const InputArea = styled.div`
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
 `
 
 export const Input = styled.input`
-    
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    background: linear-gradient(
+        90deg,
+        rgba(218, 245, 242, 1) 0%,
+        rgba(190, 245, 236, 1) 100%
+    ); 
+
+    &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+    }
 `
 
 export const ButtonArea = styled.div`
-    
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    &:nth-child(2) {
+        background-image: #e62c03;
+    }
 `
 
 export const Button = styled.button`
-    
+    margin-top: 20px;
+    border-radius: 6px;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+    height: 50px;
+    outline: none;
+    border: none;
+    padding: 0 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    background-color: #bbd6d6;
+
+    &:hover {
+        filter: drop-shadow(0 0 14px rgba(168, 235, 18, 1));
+    }
 `
+
+
 
