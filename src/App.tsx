@@ -4,7 +4,7 @@ import { GlobalStyle } from './GlobalStyle';
 
 function App() {
 
-  const [randomNum, setRandomNum] = useState<number>();
+  const [randomNum, setRandomNum] = useState<number | undefined>();
 
   useEffect(() => {
     randomNumberGenerator()
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <GlobalStyle/>
-      <GameDisplayer/>
+      <GameDisplayer randNum={randomNum || 0} />
     </>
   );
 }

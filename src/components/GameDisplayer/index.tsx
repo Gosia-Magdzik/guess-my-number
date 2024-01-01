@@ -13,13 +13,17 @@ import { Wrapper,
         Paragraph,
 } from './styled'
 
-export const GameDisplayer = () => {
+interface TypeProp {
+    randNum : number
+}
+
+export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
   return (
     <Wrapper>
         <Container>
             <TopSection>
                 <Line></Line>
-                <H1></H1>
+                <H1>{randNum}</H1>
                 <Line></Line>
             </TopSection>
             <Title>
