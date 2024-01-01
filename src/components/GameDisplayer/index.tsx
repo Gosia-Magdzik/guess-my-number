@@ -34,10 +34,10 @@ export const GameDisplayer = () => {
                 <Input type="number"/>
             </InputArea>
             <ButtonArea>
-                <Button>Guess</Button>
-                <Button>Restart</Button>
+                <Button className="orange">Guess</Button>
+                <Button className="green">Restart</Button>
             </ButtonArea>
-                <Button>Reset Score</Button>
+                <Button className="purple">Reset Score</Button>
         </Container>
     </Wrapper>
   )

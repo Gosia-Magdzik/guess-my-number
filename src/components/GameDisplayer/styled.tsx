@@ -64,6 +64,7 @@ export const Paragraph = styled.p`
     font-size: 3rem;
     font-family: "VT323", monospace;
     transition: all 0.3s ease-in-out;
+    margin: 1rem;
 
     &:nth-child(3) {
         margin-top: 20px;
@@ -76,7 +77,6 @@ export const InputArea = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 10px;
 `
 
 export const Input = styled.input`
@@ -102,10 +102,6 @@ export const ButtonArea = styled.div`
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-
-    &:nth-child(2) {
-        background-image: #e62c03;
-    }
 `
 
 export const Button = styled.button`
@@ -120,11 +116,23 @@ export const Button = styled.button`
     padding: 0 20px;
     text-align: center;
     transition: all 0.3s ease-in-out;
-    background-color: #bbd6d6;
 
     &:hover {
         filter: drop-shadow(0 0 14px rgba(168, 235, 18, 1));
     }
+
+    &.orange {
+        background-color: #f9ff52;
+    }
+
+    &.green {
+        background-color: #a1ff67;
+    }
+
+    &.purple {
+        background-color: #e98fff;
+    }
+
 `
 
 
