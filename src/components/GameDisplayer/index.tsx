@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import { Wrapper, 
         Container,
         TopSection,
@@ -21,8 +21,8 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
   
     const [checkValue, setCheckValue] = useState<number | undefined>();
 
-    const inputHandler = (event) => {
-        setCheckValue(event.target.value)
+    const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCheckValue(parseInt(event.target.value))
     }
 
     return (
