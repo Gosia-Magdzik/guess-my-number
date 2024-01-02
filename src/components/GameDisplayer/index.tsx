@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Wrapper, 
         Container,
         TopSection,
@@ -18,12 +18,19 @@ interface TypeProp {
 }
 
 export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
-  return (
+  
+    const [checkValue, setCheckValue] = useState<number | undefined>();
+
+    const inputHandler = (event) => {
+        setCheckValue(event.target.value)
+    }
+
+    return (
     <Wrapper>
         <Container>
             <TopSection>
                 <Line></Line>
-                <H1>{randNum}</H1>
+                <H1>?</H1>
                 <Line></Line>
             </TopSection>
             <Title>
@@ -35,7 +42,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
                 <Paragraph>Start Guessing</Paragraph>
             </MiddleSection>
             <InputArea>
-                <Input type="number"/>
+                <Input type="number" onChange={inputHandler} />
             </InputArea>
             <ButtonArea>
                 <Button className="orange">Guess</Button>
