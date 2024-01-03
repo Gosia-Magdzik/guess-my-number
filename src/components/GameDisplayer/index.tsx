@@ -21,8 +21,16 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
   
     const [checkValue, setCheckValue] = useState<number | undefined>();
 
+    const [output, setoutput] = useState<string>("Start Guessing");
+
     const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCheckValue(parseInt(event.target.value))
+    }
+
+    const checkHandler = () => {
+        if(checkValue === randNum){
+            setoutput("Correct Guess")
+        }
     }
 
     return (
@@ -39,7 +47,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
             <MiddleSection>
                 <Paragraph>Score: <span>20</span></Paragraph>
                 <Paragraph>Hight Score: <span>20</span></Paragraph>
-                <Paragraph>Start Guessing</Paragraph>
+                <Paragraph>{output}</Paragraph>
             </MiddleSection>
             <InputArea>
                 <Input type="number" onChange={inputHandler} />
