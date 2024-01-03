@@ -45,7 +45,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
                 <Input type="number" onChange={inputHandler} />
             </InputArea>
             <ButtonArea>
-                <Button className="orange">Guess</Button>
+                <Button onClick={checkHandler} className="orange">Guess</Button>
                 <Button className="green">Restart</Button>
             </ButtonArea>
                 <Button className="purple">Reset Score</Button>
