@@ -28,10 +28,16 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
     }
 
     const checkHandler = () => {
-        if(checkValue === randNum){
-            setoutput("Correct Guess")
+
+        if(typeof checkValue !== "undefined") {
+
+            if (checkValue === randNum) {
+                setoutput("Correct Guess!");
+            } else  {
+                setoutput(checkValue > randNum ? "Guess is Higher" : "Guess is Lower");
+            }
         }
-    }
+    };
 
     return (
     <Wrapper>
