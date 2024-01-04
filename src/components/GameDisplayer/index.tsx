@@ -23,6 +23,8 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
 
     const [output, setoutput] = useState<string>("Start Guessing");
 
+    const [correctAnswer, setCorrectAnswer] = useState<boolean>(false); //gonna stay hidden
+
     const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCheckValue(parseInt(event.target.value))
     }
@@ -33,6 +35,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
 
             if (checkValue === randNum) {
                 setoutput("Correct Guess!");
+                setCorrectAnswer(true);
             } else  {
                 setoutput(checkValue > randNum ? "Guess is Higher" : "Guess is Lower");
             }
@@ -44,7 +47,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
         <Container>
             <TopSection>
                 <Line></Line>
-                <H1>?</H1>
+                <H1>{correctAnswer ? randNum : `?`}</H1>
                 <Line></Line>
             </TopSection>
             <Title>
