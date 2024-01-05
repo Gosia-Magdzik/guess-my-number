@@ -33,6 +33,7 @@ export const Line = styled.div`
     border: 1px solid white;
     width: 50%;
     background-color: #bbd6d6;
+    border-radius: 10px;
 `
 
 export const H1 = styled.h1`
@@ -141,6 +142,10 @@ export const Button = styled.button`
 
     &:hover {
         filter: drop-shadow(0 0 14px rgba(168, 235, 18, 1));
+    }
+
+    &:active {
+        transform: scale(0.7);
     }
 
     &.orange {
