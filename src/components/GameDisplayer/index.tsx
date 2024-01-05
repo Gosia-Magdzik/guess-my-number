@@ -47,7 +47,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
                     setCorrectAnswer(true);
                 } else  {
                     setOutput(checkValue > randNum ? "Guess is Higher" : "Guess is Lower");
-                    setScore(score-1);
+                    setScore(score - 1);
                 }
                 if(score -1 === 0){
                     setOutput("Game Over")
@@ -66,6 +66,11 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
     
     const refreshPage = () => {
         window.location.reload()
+    }
+
+    const restartHighScore = () => {  
+        localStorage.removeItem("hightScore");
+        setHighScore(0)
     }
 
     return (
@@ -96,7 +101,12 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
                     Restart
                 </Button>
             </ButtonArea>
-                <Button className="purple">Reset Score</Button>
+                <Button
+                    onClick={restartHighScore} 
+                    className="purple"
+                >
+                    Reset Score
+                </Button>
         </Container>
     </Wrapper>
   )
