@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Wrapper, 
         Container,
         TopSection,
@@ -27,6 +27,12 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
 
     const [score, setScore] = useState<number>(20);
 
+    const [highScore, setHighScore] = useState<number>(
+        localStorage.getItem("highScore") 
+            ? parseInt(localStorage.getItem("highScore")!) 
+            : 0
+        );
+
     const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCheckValue(parseInt(event.target.value))
     }
@@ -51,6 +57,13 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
         }
     };
 
+    useEffect(() => {
+        if(correctAnswer) {
+           setHighScore(score); 
+           localStorage.setItem("highScore", score.toString());
+        }
+    }, [correctAnswer, score, highScore])  
+
     return (
     <Wrapper>
         <Container>
@@ -64,7 +77,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
             </Title>
             <MiddleSection>
                 <Paragraph>Score: <span>{score}</span></Paragraph>
-                <Paragraph>Hight Score: <span>20</span></Paragraph>
+                <Paragraph>Hight Score: <span>{highScore}</span></Paragraph>
                 <Paragraph>{output}</Paragraph>
             </MiddleSection>
             <InputArea>
