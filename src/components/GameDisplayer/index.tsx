@@ -21,9 +21,11 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
   
     const [checkValue, setCheckValue] = useState<number | undefined>();
 
-    const [output, setoutput] = useState<string>("Start Guessing");
+    const [output, setOutput] = useState<string>("Start Guessing");
 
     const [correctAnswer, setCorrectAnswer] = useState<boolean>(false); //gonna stay hidden
+
+    const [score, setScore] = useState<number>(20);
 
     const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCheckValue(parseInt(event.target.value))
@@ -31,13 +33,20 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
 
     const checkHandler = () => {
 
-        if(typeof checkValue !== "undefined") {
+        if (!correctAnswer && score > 0 ) {
+            if (typeof checkValue !== "undefined") {
 
-            if (checkValue === randNum) {
-                setoutput("Correct Guess!");
-                setCorrectAnswer(true);
-            } else  {
-                setoutput(checkValue > randNum ? "Guess is Higher" : "Guess is Lower");
+                if (checkValue === randNum) {
+                    setOutput("Correct Guess!");
+                    setCorrectAnswer(true);
+                } else  {
+                    setOutput(checkValue > randNum ? "Guess is Higher" : "Guess is Lower");
+                    setScore(score-1);
+                }
+                if(score -1 === 0){
+                    setOutput("Game Over")
+                }
+
             }
         }
     };
@@ -54,7 +63,7 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
                 <H1>Guess my number</H1>
             </Title>
             <MiddleSection>
-                <Paragraph>Score: <span>20</span></Paragraph>
+                <Paragraph>Score: <span>{score}</span></Paragraph>
                 <Paragraph>Hight Score: <span>20</span></Paragraph>
                 <Paragraph>{output}</Paragraph>
             </MiddleSection>
