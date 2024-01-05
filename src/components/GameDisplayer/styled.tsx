@@ -1,9 +1,5 @@
 import styled, {keyframes} from "styled-components";
 
-export const Wrapper = styled.div`
-    
-`
-
 export const Container = styled.div`
     color: #f4efef;
     background: #37475350;
@@ -18,7 +14,7 @@ export const Container = styled.div`
     transform: translate(-50%, -50%);
     height: 90vh;
     padding: 2rem;
-
+    margin: 0.2rem;
 `
 
 export const TopSection = styled.div`
@@ -26,6 +22,7 @@ export const TopSection = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
+    padding: 0.2rem;
 `
 
 export const Line = styled.div`
@@ -42,6 +39,10 @@ export const H1 = styled.h1`
     color: black;
     font-size: 3rem;
     border-radius: 40px;
+
+    @media (max-width: 720px) {
+        font-size: 2rem;
+    }
 
 `
 
@@ -80,11 +81,23 @@ export const Paragraph = styled.p`
     margin: 1rem;
     color: #bbd6d6;
     justify-content: center;
+    align-items: center;
+
+    @media (max-width: 720px) {
+        font-size: 2rem;
+        margin: 0.5rem;
+    }
 
     &:nth-child(3) {
         margin-top: 20px;
         font-size: 4rem;
         font-family: "Fjalla One", sans-serif;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 720px) {
+            font-size: 2.5rem;
+        }
     }
 
     &.correctGuess {
@@ -107,7 +120,7 @@ export const Input = styled.input`
     border-radius: 6px;
     border: none;
     outline: none;
-    height: 50px;
+    height: 5vh;
     text-align: center;
     font-size: 1.5rem;
     background: linear-gradient(
@@ -115,6 +128,10 @@ export const Input = styled.input`
         rgba(218, 245, 242, 1) 0%,
         rgba(190, 245, 236, 1) 100%
     ); 
+    
+    @media (max-width: 720px) {
+        height: 4vh;
+    }
 
     &::-webkit-inner-spin-button {
         appearance: none;
@@ -140,6 +157,11 @@ export const Button = styled.button`
     padding: 0 20px;
     text-align: center;
     transition: all 0.3s ease-in-out;
+
+    @media (max-width: 720px) {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
 
     &:hover {
         filter: drop-shadow(0 0 14px rgba(168, 235, 18, 1));

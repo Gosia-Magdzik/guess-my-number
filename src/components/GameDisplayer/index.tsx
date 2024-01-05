@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Wrapper, 
+import { 
         Container,
         TopSection,
         Line,
@@ -76,7 +76,6 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
     }
 
     return (
-    <Wrapper>
         <Container>
             <TopSection>
                 <Line></Line>
@@ -114,7 +113,6 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
                     Reset Score
                 </Button>
         </Container>
-    </Wrapper>
   )
 }
 
