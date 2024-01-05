@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const Wrapper = styled.div`
     
@@ -60,16 +60,38 @@ export const MiddleSection = styled.div`
     padding: 10px;
 `
 
+const pulseAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
 export const Paragraph = styled.p`
     font-size: 3rem;
     font-family: "VT323", monospace;
     transition: all 0.3s ease-in-out;
     margin: 1rem;
+    color: #bbd6d6;
 
     &:nth-child(3) {
         margin-top: 20px;
         font-size: 4rem;
         font-family: "Fjalla One", sans-serif;
+    }
+
+    &.correctGuess {
+        color: rgba(168, 235, 18);
+        animation: ${pulseAnimation} 1s infinite;
+    }
+
+    &.gameOver {
+        color: #ff525b;
     }
 `
 

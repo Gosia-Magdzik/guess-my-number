@@ -89,7 +89,11 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
             <MiddleSection>
                 <Paragraph>Score: <span>{score}</span></Paragraph>
                 <Paragraph>Hight Score: <span>{highScore}</span></Paragraph>
-                <Paragraph>{output}</Paragraph>
+                <Paragraph
+                    className= {correctAnswer ? "correctGuess" : score === 0 ? "gameOver" : ""}
+                >
+                    {output}
+                </Paragraph>
             </MiddleSection>
             <InputArea>
                 <Input type="number" onChange={inputHandler} />
