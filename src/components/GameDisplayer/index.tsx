@@ -62,7 +62,11 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
            setHighScore(score); 
            localStorage.setItem("highScore", score.toString());
         }
-    }, [correctAnswer, score, highScore])  
+    }, [correctAnswer, score, highScore]);
+    
+    const refreshPage = () => {
+        window.location.reload()
+    }
 
     return (
     <Wrapper>
@@ -85,7 +89,12 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
             </InputArea>
             <ButtonArea>
                 <Button onClick={checkHandler} className="orange">Guess</Button>
-                <Button className="green">Restart</Button>
+                <Button 
+                    onClick={refreshPage} 
+                    className="green"
+                >
+                    Restart
+                </Button>
             </ButtonArea>
                 <Button className="purple">Reset Score</Button>
         </Container>
