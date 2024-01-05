@@ -57,7 +57,7 @@ export const MiddleSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     padding: 10px;
 `
 
@@ -79,6 +79,7 @@ export const Paragraph = styled.p`
     transition: all 0.3s ease-in-out;
     margin: 1rem;
     color: #bbd6d6;
+    justify-content: center;
 
     &:nth-child(3) {
         margin-top: 20px;
