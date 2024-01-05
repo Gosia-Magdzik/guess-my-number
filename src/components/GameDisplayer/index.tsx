@@ -59,8 +59,10 @@ export const GameDisplayer:React.FC<TypeProp> = ({randNum}) => {
 
     useEffect(() => {
         if(correctAnswer) {
-           setHighScore(score); 
-           localStorage.setItem("highScore", score.toString());
+            if(score > highScore) {
+                setHighScore(score); 
+                localStorage.setItem("highScore", score.toString());
+            }
         }
     }, [correctAnswer, score, highScore]);
     
